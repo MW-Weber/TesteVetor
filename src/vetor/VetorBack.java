@@ -2,15 +2,19 @@ package vetor;
 import java.util.Random;
 
 public class VetorBack {
+        int vet[];
         
     /* Construtor */
     public VetorBack(int size){
-        int Vet[];
+        
     }
     
     /* Preenche o vetor com valores aleatórios*/
     public void randomFill(){
         Random r= new Random();
+        for(int i = 0; i < vet.length; i++) {
+            vet[i] = r.nextInt(1000);
+        }
         
         
     }
@@ -22,7 +26,11 @@ public class VetorBack {
     
     /* Converte o vetor para String*/
     public String toString(){
-    
+        String s ="";
+        for(int i=0;i<vet.length;i++){
+            s = s+" "+ String.valueOf(vet[i]);
+        }
+        return s;
     }
     /* Compara se dois vetores são iguais */
     public boolean equals(int[] v){
