@@ -20,7 +20,18 @@ public class VetorBack {
     
     /* Implementa o método de ordenação bubbleSort*/
     public void bubbleSort(){
-        
+        boolean Troca;
+        do{
+            Troca = false;
+            for(int i=0;i<vet.length;i++){
+                if(vet[i]>vet[i+1]){
+                    int aux = vet[i];
+                    vet[i]=vet[i+1];
+                    vet[i+1]=aux;
+                    Troca=true;
+                }
+            }
+        }while(Troca==true);
     }
     
     /* Converte o vetor para String*/
@@ -32,8 +43,14 @@ public class VetorBack {
         return s;
     }
     /* Compara se dois vetores são iguais */
-    public boolean equals(int[] v){
-        return true;
+    public boolean equals(VetorBack v){
+        for(int i=0;i<vet.length;i++){
+            if(this.valueAt(i)!=v.valueAt(i)){
+                return false;
+            }
+        }
+        vet.equals(v);
+            return true;
     }
     
     /* Atribui um valor na posição pos do vetor */
@@ -43,7 +60,10 @@ public class VetorBack {
     
     /* Retorna o valor na posição pos do vetor. */
     public int valueAt(int pos){
-        return vet[pos];
+        if(pos>=0 && pos<=vet.length){
+            return vet[pos];
+            }
+        return 0;
     }
     
     /* Retorna o tamanho do vetor */
